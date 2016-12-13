@@ -8,15 +8,6 @@ env:
 otp_release:
  - 18.3
 install:
-  - export DIEHARDER=dieharder-3.31.1
-  - wget https://www.phy.duke.edu/~rgb/General/dieharder/$DIEHARDER.tgz
-  - tar xzf $DIEHARDER.tgz
-  - cd $DIEHARDER
-  - ./configure --prefix=$TRAVIS_BUILD_DIR
-  - make
-  - make install
-  - PATH=$PATH:$TRAVIS_BUILD_DIR/bin
-  - cd ..
   - ./rebar3 as test upgrade
 script:
   - ./rebar3 compile
@@ -36,3 +27,4 @@ addons:
       - gcc-6
       - libgsl0-dev
       - perf
+      - dieharder
