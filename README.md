@@ -1,5 +1,16 @@
 # What is this?
 
+> **Archived (lpgauth fork).** This fork's reason to exist was the OTP
+> 26+ `erl -noshell -eval` option-order fix in `preamble.sh`, which was
+> never released to upstream's hex package. That use case is now
+> obsolete: I've switched to a clean-room replacement,
+> [**knot**](https://github.com/lpgauth/knot), published to hex.pm.
+> knot exposes the same `uniform/1` semantics, is 30-50% faster under
+> concurrent load (per-OS-thread wyrand state vs granderl's shared
+> state), and builds correctly on every supported OTP version. See
+> [tokenrove/granderl](https://github.com/tokenrove/granderl) for the
+> upstream original.
+
 Experiments in fast "random" number generation for Erlang; though they
 have the same interface as `rand:uniform/1`, think of them more like
 `phash2/2` with a timestamp -- not really random, but fast
